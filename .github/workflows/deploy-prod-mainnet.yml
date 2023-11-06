@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy widgets to social.near (mainnet)
     env:
-      NEAR_SOCIAL_DEPLOY_ID: ${{ vars.HACKOWEEN_ACCOUNT_ID }}
-      NEAR_SOCIAL_ACCOUNT_ID: ${{ vars.HACKOWEEN_ACCOUNT_ID }}
-      NEAR_SOCIAL_ACCOUNT_PUBLIC_KEY: ${{ vars.HACKOWEEN_ACCOUNT_PUBLIC_KEY }}
-      NEAR_SOCIAL_ACCOUNT_PRIVATE_KEY: ${{ secrets.HACKOWEEN_ACCOUNT_PRIVATE_KEY }}
+      NEAR_SOCIAL_DEPLOY_ID: ${{ vars.NEAR_ACCOUNT_ID }}
+      NEAR_SOCIAL_ACCOUNT_ID: ${{ vars.NEAR_ACCOUNT_ID }}
+      NEAR_SOCIAL_ACCOUNT_PUBLIC_KEY: ${{ vars.NEAR_ACCOUNT_PUBLIC_KEY }}
+      NEAR_SOCIAL_ACCOUNT_PRIVATE_KEY: ${{ secrets.NEAR_ACCOUNT_PRIVATE_KEY }}
 
     steps:
       - name: Checkout repository
@@ -30,7 +30,7 @@ jobs:
           curl --proto '=https' --tlsv1.2 -LsSf https://github.com/FroVolod/bos-cli-rs/releases/download/v0.3.2/bos-cli-installer.sh | sh
 
       - name: Deploy widgets
-        working-directory: ./build/hackoween
+        working-directory: ./build/sample
         run: |
           which bos
           echo $PATH
