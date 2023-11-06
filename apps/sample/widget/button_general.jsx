@@ -5,6 +5,6 @@ const handleButtonClick =
 return (
   <button class="btn btn-primary" onClick={handleButtonClick}>
     {value}
-    {"test value 3"}
+    {"test value 4"}
   </button>
 );
